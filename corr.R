@@ -15,7 +15,7 @@ corr <- function(directory, threshold = 0) {
                 t <- read.csv(f)
                 t_cc <- t[complete.cases(t),]
                 if (nrow(t_cc) > threshold){
-                        v <- c(v,cor(t_cc$sulfate,t_cc$nitrate))
+                        v <- c(v,round(cor(t_cc$sulfate,t_cc$nitrate),5))
                 } else {
                         v <- c(v,NA)
                 }
