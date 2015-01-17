@@ -18,7 +18,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
         t <- lapply(f,read.csv)
         t <- rbindlist(t)
         if(pollutant %in% names(t)) {
-                mean(t[[pollutant]],na.rm = TRUE)
+                round(mean(t[[pollutant]],na.rm = TRUE),3)
         } else {
                 NA
         }
